@@ -1,1 +1,1 @@
-SELECT * FROM transactions WHERE status='Success';
+sssSELECT * FROM transactions WHERE status='Success';
