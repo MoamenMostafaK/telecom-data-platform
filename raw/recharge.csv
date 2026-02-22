@@ -1,0 +1,5 @@
+recharge_id,customer_id,amount,method
+201,1,50,Card
+202,2,100,Cash
+203,3,70,Card
+204,4,30,Cash
