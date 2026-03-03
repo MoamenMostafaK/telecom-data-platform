@@ -1,5 +1,0 @@
-101,1,200,Success
-103,3,150,Success
-104,1,300,Success
-1,Ahmed,Cairo,Prepaid
-3,Ali,Cairo,Postpaid

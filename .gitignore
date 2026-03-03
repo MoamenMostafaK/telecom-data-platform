@@ -1,0 +1,21 @@
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+venv/
+env/
+.env
+
+# Project specific data/logs
+logs/*.txt
+bronze/
+silver/
+gold/
+my_reports/*.csv
+
+# OS specific
+.DS_Store
+Thumbs.db

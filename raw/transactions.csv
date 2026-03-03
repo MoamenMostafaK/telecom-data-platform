@@ -1,5 +1,0 @@
-txn_id,customer_id,amount,status
-101,1,200,Success
-102,2,500,Failed
-103,3,150,Success
-104,1,300,Success
