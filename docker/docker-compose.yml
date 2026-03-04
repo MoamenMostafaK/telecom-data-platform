@@ -1,14 +1,18 @@
 services:
 
-  # Your custom application
-  app:
-    build: .             # This tells Docker to look for the "Dockerfile" in the current folder
-    ports:
-      - "3000:3000"
+  python:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     depends_on:
-      - db               # Wait for the database to start
+      - db
     environment:
       - DATABASE_URL=postgres://admin:admin@db:5432/telecomDB
+    volumes:
+      - ../scripts:/app/scripts
+      - ../src:/app/src
+      - ../data:/app/data
+    working_dir: /app
 
   db:
     image: postgres:alpine

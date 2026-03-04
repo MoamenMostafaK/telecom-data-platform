@@ -5,11 +5,11 @@ import os
 
 # 1. Setup your paths and credentials
 DB_CONFIG = {
-    "dbname": "telecom_raw",
+    "dbname": "telecomDB",
     "user": "admin",
-    "password": "admin123",
+    "password": "admin",
     "host": "localhost",
-    "port": "5433"
+    "port": "5432"
 }
 
 OUTPUT_DIR = "./my_reports"

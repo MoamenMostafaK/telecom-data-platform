@@ -1,17 +1,12 @@
-FROM node:alpine
+FROM python:3.11-slim
 
-# 2. Create an app directory inside the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# 3. Copy dependency files and install them
-COPY package*.json ./
-RUN npm install --production
+COPY requirements.txt .
 
-# 4. Copy your actual application code
-COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. The port your app runs on
-EXPOSE 3000
+COPY scripts/ ./scripts/
+COPY src/ ./src/
 
-# 6. Command to start your app
-CMD ["node", "index.js"]
+CMD ["python", "scripts/main.py"]
