@@ -1,0 +1,37 @@
+services:
+
+  # Your custom application
+  app:
+    build: .             # This tells Docker to look for the "Dockerfile" in the current folder
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db               # Wait for the database to start
+    environment:
+      - DATABASE_URL=postgres://admin:admin@db:5432/telecomDB
+
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=telecomDB
+    ports:
+      - "5498:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+
+  admin-panel:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+
+
+volumes:
+  db_data:
+

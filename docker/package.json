@@ -1,0 +1,13 @@
+{
+    "name": "db-test-app",
+    "version": "1.0.0",
+    "description": "Simple app to test postgres connection",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "pg": "^8.11.0"
+    }
+  }
+  
