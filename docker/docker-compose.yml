@@ -10,9 +10,8 @@ services:
       - DATABASE_URL=postgres://admin:admin@db:5432/telecomDB
     volumes:
       - ../scripts:/app/scripts
-      - ../src:/app/src
-      - ../data:/app/data
     working_dir: /app
+    command: python -m scripts.main
 
   db:
     image: postgres:alpine
@@ -38,4 +37,5 @@ services:
 
 volumes:
   db_data:
+
 
