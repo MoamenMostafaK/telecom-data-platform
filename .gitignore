@@ -11,10 +11,14 @@ env/
 
 # Project specific data/logs
 logs/*.txt
+
+
+# Raw generated data
+data/raw/*.csv
 bronze/
+
 silver/
 gold/
-my_reports/*.csv
 
 # OS specific
 .DS_Store
