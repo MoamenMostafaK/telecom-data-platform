@@ -8,15 +8,16 @@ from pathlib import Path
 random.seed(42)
 np.random.seed(42)
 
-RAW_DIR = Path(__file__).parent / 'data' / 'raw'
+BASE_DIR = Path(__file__).parent.parent
+RAW_DIR = BASE_DIR / 'generate' / 'data' / 'raw'
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Egyptian context ──────────────────────────────────────────────────────────
 EGYPTIAN_FIRST_NAMES = [
-    'Mohamed', 'Ahmed', 'Mahmoud', 'Omar', 'Ali', 'Hassan', 'Hussein',
+    'Moamen', 'Ahmed', 'Mahmoud', 'Omar', 'Ali', 'Hassan', 'Hussein',
     'Ibrahim', 'Khaled', 'Tarek', 'Youssef', 'Amr', 'Mostafa', 'Karim',
-    'Fatma', 'Nour', 'Sara', 'Mariam', 'Aya', 'Dina', 'Rania', 'Mona',
-    'Heba', 'Yasmin', 'Salma', 'Noha', 'Eman', 'Hana', 'Asmaa', 'Doaa'
+    'Fatma', 'Sara', 'Mariam', 'Aya', 'Dina', 'Rania', 'Mona','Heba',
+    'Yasmin', 'Salma', 'Noha', 'Eman', 'Hana', 'Asmaa', 'Doaa', 'Mohamed'
 ]
 
 EGYPTIAN_LAST_NAMES = [

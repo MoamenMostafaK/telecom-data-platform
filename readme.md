@@ -9,19 +9,19 @@ Built as a progressive portfolio piece — each layer adds a new engineering cap
 ## Architecture
 
 ```
-generate_data.py          # Synthetic data generation with realistic dirty issues
+generate/generate_data.py      # Synthetic data generation with realistic dirty issues
     ↓
-data/raw/                 # Raw CSVs (customers, CDR, recharges, towers, churn)
+generate/data/raw/             # Raw CSVs (customers, CDR, recharges, towers, churn)
     ↓
-etl.py                    # Validate → Quarantine → Load
+etl/etl.py                     # Validate → Quarantine → Load
     ↓
-data/quarantine/          # Rejected rows with reject reason (never silently dropped)
+etl/data/quarantine/           # Rejected rows with reject reason (never silently dropped)
     ↓
-PostgreSQL (Docker)       # Clean, structured data ready for analysis
+PostgreSQL (Docker)            # Clean, structured data ready for analysis
     ↓
-[Layer 2] dbt             # Star schema, SCD2, ARPU models            ← coming
+[Layer 2] dbt                  # Star schema, SCD2, ARPU models            ← coming
     ↓
-[Layer 3] Airflow         # Orchestrated DAG: Extract → Load → Transform  ← coming
+[Layer 3] Airflow              # Orchestrated DAG: Extract → Load → Transform  ← coming
 ```
 
 ---
@@ -92,13 +92,15 @@ pip install -r requirements.txt
 python generate/generate_data.py
 ```
 
+Data will be written to `generate/data/raw/`.
+
 **4. Run ETL**
 
 ```bash
 python etl/etl.py
 ```
 
-Check `logs/` for the run log and `data/quarantine/` for rejected rows.
+Check `etl/logs/` for the run log and `etl/data/quarantine/` for rejected rows.
 
 ---
 
@@ -106,25 +108,39 @@ Check `logs/` for the run log and `data/quarantine/` for rejected rows.
 
 ```
 telecom-data-platform/
-├── docker/
+├── infra/
 │   └── docker-compose.yml
-├── data/
-│   ├── raw/              # Generated CSVs
-│   └── quarantine/       # Rejected rows with reject reason
 ├── generate/
-│   └── generate_data.py
+│   ├── generate_data.py   # Data generation script
+│   └── data/
+│       └── raw/           # Generated CSVs (customers, cdr, churn_events, cell_towers, recharges)
 ├── etl/
-│   ├── etl.py
-│   └── validate.py       # coming
+│   ├── etl.py             # ETL pipeline (validate → quarantine → load)
+│   ├── logs/              # ETL run logs
+│   └── data/
+│       └── quarantine/    # Rejected rows with reject reason
 ├── sql/
-│   ├── ddl.sql
-│   └── queries.sql       # coming
-├── dbt/                  # Layer 2 — coming
-├── orchestration/        # Layer 3 — coming
-├── logs/
+│   └── ddl.sql            # DDL schema (auto-run via docker-compose)
+├── scripts/
+│   └── __init__.py        # Package marker (legacy utilities, may be repurposed)
+├── dbt/                   # Layer 2 — coming
+├── orchestration/         # Layer 3 — coming
+├── .archive/              # Legacy code (preserved git history, not in use)
 ├── requirements.txt
 └── README.md
 ```
+
+---
+
+## Project Status & Cleanup
+
+**Recent cleanup** (April 2026):
+
+- Consolidated duplicate ETL files → single canonical `/etl/etl.py`
+- Moved data generation script → `/generate/generate_data.py`
+- Unified raw data location → `/generate/data/raw/`
+- Archived legacy code → `/.archive/` (git history preserved)
+- Updated documentation to reflect actual structure
 
 ---
 
