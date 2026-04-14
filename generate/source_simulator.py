@@ -9,7 +9,7 @@ random.seed(42)
 np.random.seed(42)
 
 BASE_DIR = Path(__file__).parent.parent
-RAW_DIR = BASE_DIR / 'generate' / 'data' / 'raw'
+RAW_DIR = BASE_DIR / 'data' / 'raw'
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Egyptian context ──────────────────────────────────────────────────────────

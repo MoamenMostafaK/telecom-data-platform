@@ -12,12 +12,9 @@ env/
 # Project specific data/logs
 logs/
 
-
 # Raw generated data
 data/raw/*.csv
 data/quarantine/
-etl/data/quarantine/
-generate/data/raw/
 
 # OS specific
 .DS_Store

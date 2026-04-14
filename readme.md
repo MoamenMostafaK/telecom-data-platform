@@ -9,13 +9,13 @@ Built as a progressive portfolio piece — each layer adds a new engineering cap
 ## Architecture
 
 ```
-generate/generate_data.py      # Synthetic data generation with realistic dirty issues
+generate/source_simulator.py    # Synthetic data generation with realistic dirty issues
     ↓
-generate/data/raw/             # Raw CSVs (customers, CDR, recharges, towers, churn)
+data/raw/                       # Raw CSVs (customers, CDR, recharges, towers, churn)
     ↓
-etl/etl.py                     # Validate → Quarantine → Load
+src/etl.py                      # Validate → Quarantine → Load
     ↓
-etl/data/quarantine/           # Rejected rows with reject reason (never silently dropped)
+data/quarantine/                # Rejected rows with reject reason (never silently dropped)
     ↓
 PostgreSQL (Docker)            # Clean, structured data ready for analysis
     ↓
@@ -89,18 +89,18 @@ pip install -r requirements.txt
 **3. Generate raw data**
 
 ```bash
-python generate/generate_data.py
+python generate/source_simulator.py
 ```
 
-Data will be written to `generate/data/raw/`.
+Data will be written to `data/raw/`.
 
 **4. Run ETL**
 
 ```bash
-python etl/etl.py
+python src/etl.py
 ```
 
-Check `etl/logs/` for the run log and `etl/data/quarantine/` for rejected rows.
+Check `logs/` for the run log and `data/quarantine/` for rejected rows.
 
 ---
 
@@ -111,14 +111,14 @@ telecom-data-platform/
 ├── infra/
 │   └── docker-compose.yml
 ├── generate/
-│   ├── generate_data.py   # Data generation script
+│   ├── source_simulator.py   # Data generation script
 │   └── data/
 │       └── raw/           # Generated CSVs (customers, cdr, churn_events, cell_towers, recharges)
-├── etl/
-│   ├── etl.py             # ETL pipeline (validate → quarantine → load)
-│   ├── logs/              # ETL run logs
-│   └── data/
-│       └── quarantine/    # Rejected rows with reject reason
+├── src/
+│   └── etl.py             # ETL pipeline (validate → quarantine → load)
+├── data/
+│   └── quarantine/        # Rejected rows with reject reason
+├── logs/                  # ETL run logs
 ├── sql/
 │   └── ddl.sql            # DDL schema (auto-run via docker-compose)
 ├── scripts/
@@ -136,9 +136,11 @@ telecom-data-platform/
 
 **Recent cleanup** (April 2026):
 
-- Consolidated duplicate ETL files → single canonical `/etl/etl.py`
-- Moved data generation script → `/generate/generate_data.py`
-- Unified raw data location → `/generate/data/raw/`
+- Consolidated duplicate ETL files → single canonical `/src/etl.py`
+- Moved data generation script → `/generate/source_simulator.py`
+- Unified raw data location → `/data/raw/`
+- Unified quarantine location → `/data/quarantine/`
+- Unified logs location → `/logs/`
 - Archived legacy code → `/.archive/` (git history preserved)
 - Updated documentation to reflect actual structure
 

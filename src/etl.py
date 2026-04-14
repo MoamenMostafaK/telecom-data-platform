@@ -11,9 +11,9 @@ from datetime import datetime
 # CONFIG
 # =============================================================================
 BASE_DIR = Path(__file__).parent.parent 
-RAW_DIR = BASE_DIR / 'generate' / 'data' / 'raw'
-QUARANTINE_DIR = BASE_DIR / 'etl' / 'data' / 'quarantine'
-LOG_DIR = BASE_DIR / 'etl' / 'logs'
+RAW_DIR = BASE_DIR / 'data' / 'raw'
+QUARANTINE_DIR = BASE_DIR / 'data' / 'quarantine'
+LOG_DIR = BASE_DIR / 'logs'
 
 QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
 LOG_DIR.mkdir(parents=True, exist_ok=True)
