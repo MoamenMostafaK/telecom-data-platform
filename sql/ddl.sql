@@ -124,3 +124,17 @@ CREATE INDEX idx_churn_reason ON churn_events(reason);
 
 COMMENT ON TABLE churn_events IS 'Subscriber churn log. Composite PK allows multiple churn events per MSISDN over time.';
 COMMENT ON COLUMN churn_events.reason IS 'voluntary=customer choice, involuntary=non-payment, ported=moved to competitor.';
+
+
+--Add an Audit/Log Table
+--In a real enterprise, "looking at the terminal" isn't enough. You need to store the status of every run in the database itself.
+
+
+CREATE TABLE etl_log (
+    run_id          VARCHAR(20) PRIMARY KEY,
+    start_time      TIMESTAMP DEFAULT NOW(),
+    end_time        TIMESTAMP,
+    status          VARCHAR(10), -- 'SUCCESS', 'FAILED'
+    rows_processed  INT DEFAULT 0,
+    rows_quarantined INT DEFAULT 0
+);

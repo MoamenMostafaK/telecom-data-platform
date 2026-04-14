@@ -1,0 +1,51 @@
+customer_id,msisdn,full_name,city,region,national_id,registration_date,status,balance_egp,_reject_reason
+77b5a0c5-855a-4bc0-859f-c66f1595d637,+201577840,Mohamed Mansour,Ismailia,Canal Zone,24238849696532,2022-12-17,active,45.45,invalid_msisdn
+e106de36-013d-4500-9bda-fb559f5f8ac3,+2012167670,Ibrahim Ali,Sohag,Upper Egypt,48086131712748,2022-06-25,active,207.75,invalid_msisdn
+a2c815fd-2c57-4d24-8b8c-78a4cc4be7ab,+20121040431566,Asmaa Khalil,Suez,Canal Zone,04945198327315,2019-12-26,suspended,183.78,invalid_msisdn
+37a5c9ad-5434-4bbd-8c10-05b0ef071f5a,+2015801584,Hussein Soliman,Ismailia,Canal Zone,73322141888059,2019-01-05,active,188.36,invalid_msisdn
+54777c87-8c1c-4d59-8f84-97de4cac1a6a,+201088904,Moamen Nasser,Aswan,Upper Egypt,10620034244204,2022-07-14,active,270.59,invalid_msisdn
+c9cf16b8-9139-44ba-b71a-53fed67a7db4,+20123747558030,Dina Farouk,Sharm El Sheikh,South Sinai,35779071416335,2020-02-12,active,176.55,invalid_msisdn
+17e5bf30-7fcd-49d9-b103-5b151a74e756,+20108484264833,Yasmin Mohamed,Hurghada,Red Sea,03691559428434,2019-10-09,active,306.54,invalid_msisdn
+0ea0e535-3102-43b9-abdf-852750834715,+2015983326,Hassan Ahmed,Sharm El Sheikh,South Sinai,34717545588450,2021-11-15,active,175.55,invalid_msisdn
+12cf2543-22b6-4784-afcf-b5dd04f77b10,+201239982,Fatma Mansour,Qena,Upper Egypt,62534929298316,2022-10-11,suspended,244.61,invalid_msisdn
+4179dcc7-b1e3-4da3-bd21-b2c783f57aaa,+201245819,Eman Mohamed,Hurghada,Red Sea,24471462730147,2018-02-24,churned,33.36,invalid_msisdn
+f43dedbf-bcf4-4535-88d7-bdf58d8496c2,+2010050583,Noha Farouk,Luxor,Upper Egypt,60310890714014,2018-02-08,active,377.28,invalid_msisdn
+39c44d85-b2a5-4a01-a70e-b652062291e5,+2012572853,Asmaa Younis,Aswan,Upper Egypt,90767699150785,2019-04-23,active,54.0,invalid_msisdn
+f6ffdf35-7e36-4afd-b537-bb4a6deab150,+2011669834,Fatma Abdallah,Qena,Upper Egypt,54396273652717,2022-07-31,active,92.51,invalid_msisdn
+44ca8147-5d7e-4acb-9472-83a3ae797395,+2015879303,Mona Ali,Beni Suef,Middle Egypt,29031028795083,2019-04-11,active,357.27,invalid_msisdn
+04d107d0-1f27-4665-9a70-80260412d125,+2010115866,Salma Abdallah,Luxor,Upper Egypt,28507251786376,2018-07-04,suspended,353.11,invalid_msisdn
+13eeb1d3-2161-4bff-8576-62bc8d7bd1ea,+201266217,Yasmin Omar,Tanta,Delta,34450566588339,2022-08-04,active,428.2,invalid_msisdn
+d36f5279-26d8-453f-9a5c-2740485b1539,+201575808,Dina Younis,Mansoura,Delta,66057798066039,2020-01-09,active,315.26,invalid_msisdn
+849f82a9-a88b-483a-9b54-0bbf1ed1985f,+201068564,Ibrahim Ali,Qena,Upper Egypt,69496843645380,2022-03-29,active,484.07,invalid_msisdn
+56f1e57f-e5c2-4d61-9fee-68a8fe8f255f,+2015136054,Khaled Nasser,Mansoura,Delta,96340679176651,2022-08-09,active,61.46,invalid_msisdn
+11ea1917-d983-4862-a358-6a0ee7bb822a,+201111220,Karim Ragab,Tanta,Delta,44391649701693,2021-04-24,active,345.65,invalid_msisdn
+108edd7f-90c3-4733-8d47-f44094ff4943,+2011796082,Amr Soliman,Asyut,Upper Egypt,94282491165020,2020-05-14,suspended,21.44,invalid_msisdn
+2f474ba5-4838-4529-a6d5-00941842f816,+201137209,Mariam Sayed,Beni Suef,Middle Egypt,23860030443619,2021-09-28,suspended,286.93,invalid_msisdn
+523722e3-d5cf-4035-ad48-649ed08bdde1,+20120132495193,Fatma Ibrahim,Cairo,Cairo,24365858564230,2019-04-14,active,37.47,invalid_msisdn
+0bb0c572-a22e-4ac6-9c82-48e2f0db399d,+201519976,Hassan Abdallah,Beni Suef,Middle Egypt,04588165025447,2019-12-01,active,62.28,invalid_msisdn
+ad2f5c85-be47-4d45-92e4-d416c81cd529,+201563286,Yasmin Ibrahim,Asyut,Upper Egypt,36817203136955,2021-03-20,active,259.05,invalid_msisdn
+ca513d8d-6911-40e5-a16d-1dc987ff86da,+201235381,Noha Ali,Luxor,Upper Egypt,22190533470474,2020-05-21,active,194.4,invalid_msisdn
+9055ade7-e5ef-4e81-aed2-7ba96dd82530,+201085327,Dina Mohamed,Hurghada,Red Sea,09921779055286,2019-11-21,churned,292.6,invalid_msisdn
+0fee7a6d-1519-4202-9969-844c6f675949,+201201154,Fatma Younis,Mansoura,Delta,06085481867463,2022-01-28,active,11.53,invalid_msisdn
+3a4c47cd-4c44-4831-945f-e00f74428286,+20100271698837,Mariam Hassan,Beni Suef,Middle Egypt,51985458294203,2018-07-16,active,402.46,invalid_msisdn
+1d2ad84a-0b14-468c-b17b-7238945bd6d0,+2012920856,Aya Abdelaziz,Asyut,Upper Egypt,64085858838256,2022-01-07,active,238.91,invalid_msisdn
+8df33d15-d18f-44ee-96e9-df684b2d7e90,+201018648769,Dina Nasser,Tanta,Delta,42673204413845,2022-01-12,active,19.3,duplicate_row
+e81f86c8-ec27-4767-a864-2c3be4db4666,+201508801994,Mariam Saad,Mansoura,Delta,37550375899757,2022-12-28,active,379.66,duplicate_row
+affc6bdc-c028-495f-963a-7013f96b1471,+201124731261,Mohamed Saad,Sharm El Sheikh,South Sinai,50710580119509,2020-03-08,active,231.91,duplicate_row
+d89b25a8-2479-4632-a78b-523331c60090,+201548768057,Noha Ali,Beni Suef,Middle Egypt,37718430192209,2018-04-11,active,244.43,duplicate_row
+1e05e5d0-5b0d-4abd-b625-ded9e0c68952,+201265328632,Karim Khalil,Qena,Upper Egypt,67850720811556,2022-07-01,churned,82.16,duplicate_row
+6b5dfe34-1dea-4a2d-bddf-de1f757d32a9,+201248242183,Youssef Abdelrahman,Asyut,Upper Egypt,54006445475231,2020-10-28,active,472.23,duplicate_row
+f7da1e82-976e-4252-8c53-405bdfaeddb0,+201599070755,Khaled Farouk,Tanta,Delta,68169957060717,2018-03-05,active,46.02,duplicate_row
+8103ae3e-556a-437f-ac9b-af13979d4709,+201118274485,Moamen Nasser,Beni Suef,Middle Egypt,62095935186387,2020-07-18,suspended,77.07,duplicate_row
+dfcf9439-54bf-411c-8cb5-02e5c79da9dc,+201039429045,Mariam Nasser,,,67925298585672,2022-01-16,suspended,241.03,duplicate_row
+81db6374-2cb1-4ae1-bda3-88f27f239cd1,+201540649308,Hussein Khalil,Damietta,Delta,86632663416389,2020-02-05,suspended,342.32,duplicate_row
+d137842c-d4e7-47d4-bfe9-924c693b9a69,+201074260880,Mona Mohamed,Marsa Matruh,Northwest Coast,17164455618579,2019-11-22,active,149.22,duplicate_row
+c9b0d34b-d862-437a-89ee-df21fee79fd8,+201112110187,Ahmed Abdallah,Alexandria,Alexandria,58690170740392,2020-11-17,active,293.88,duplicate_row
+bfcaecf0-761e-410e-9403-17801b22026d,+201581024808,Eman Sayed,Zagazig,Delta,78002443236221,2020-01-21,active,19.03,duplicate_row
+8619690c-4a3e-49e2-b876-dbd9b7258dd2,+201520385886,Khaled Mohamed,Mansoura,Delta,78802652951646,2021-11-02,active,103.32,duplicate_row
+7b547bd2-7884-4972-b80c-bc269bcff94a,+201545352181,Mariam Omar,Alexandria,Alexandria,55231243292127,2020-12-22,active,281.87,duplicate_row
+56b4dfe6-65e5-4395-8532-b872c261a0f1,+201596471589,Asmaa Abdelrahman,Suez,Canal Zone,29025725204565,2018-02-05,active,145.83,duplicate_row
+26665bdb-9eb8-4083-aa9a-0ad7a942609d,+201557490250,Mohamed Mostafa,Ismailia,Canal Zone,90193588953690,2019-08-19,active,75.04,duplicate_row
+52b2513e-668b-4ea8-a874-f29f084fc16a,+201206821223,Amr Soliman,Cairo,Cairo,21650587146921,2021-07-12,active,385.05,duplicate_row
+8acfac50-89e5-41fa-8cc2-b4aaee75c250,+201141956252,Noha Soliman,,,71509976838903,2021-07-25,active,379.47,duplicate_row
+4d957769-b338-4af9-a58d-e5cae4f543a6,+201141085628,Tarek Omar,Mansoura,Delta,18848520089434,2021-01-12,active,493.48,duplicate_row

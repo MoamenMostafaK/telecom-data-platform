@@ -1,0 +1,6 @@
+msisdn,churn_date,reason,_reject_reason
++201152090421,2022-03-17,voluntary,msisdn_not_in_customers
++201287996846,2021-11-28,involuntary,msisdn_not_in_customers
++201089164983,2021-11-30,ported,msisdn_not_in_customers
++201588897535,2022-06-09,voluntary,msisdn_not_in_customers
++201274489061,2022-06-13,voluntary,msisdn_not_in_customers
