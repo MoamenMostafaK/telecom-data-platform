@@ -11,7 +11,7 @@ services:
       - "5498:5432" # 5498 is your "door" from Windows to Docker
     volumes:
       - telecom_pgdata:/var/lib/postgresql/data
-      - ./sql/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
+      - ../sql/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
 
   admin-panel:
     image: adminer:latest

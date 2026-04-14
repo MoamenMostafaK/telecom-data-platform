@@ -66,7 +66,7 @@ def quarantine(df: pd.DataFrame, table: str, reason_col: str = '_reject_reason')
         return 0
     out = QUARANTINE_DIR / f'{table}_{run_id}.csv'
     df.to_csv(out, index=False)
-    log.warning(f'QUARANTINE | {table} | {len(df)} rows → {out.name}')
+    log.warning(f'QUARANTINE | {table} | {len(df)} rows -> {out.name}')
     return len(df)
 
 def load_to_postgres(df: pd.DataFrame, table: str, conn, cols: list):
@@ -147,6 +147,14 @@ def process_recharges(conn, valid_msisdns):
     unknown_msisdn = ~df['msisdn'].isin(valid_msisdns)
     df.loc[unknown_msisdn, '_reject_reason'] = 'msisdn_not_in_customers'
 
+    # Rule 2: negative or zero amount
+    bad_amount = df['amount_egp'] <= 0
+    df.loc[bad_amount & df['_reject_reason'].isna(), '_reject_reason'] = 'negative_or_zero_amount'
+
+    # Rule 3: duplicate recharge_id
+    dupes = df.duplicated(subset=['recharge_id'], keep='first')
+    df.loc[dupes & df['_reject_reason'].isna(), '_reject_reason'] = 'duplicate_recharge_id'
+
     rejected = df[df['_reject_reason'].notna()].copy()
     clean = df[df['_reject_reason'].isna()].drop(columns=['_reject_reason'])
 
@@ -162,6 +170,9 @@ def process_cdr(conn, valid_msisdns, valid_tower_ids):
 
     unknown_msisdn = ~df['msisdn'].isin(valid_msisdns)
     df.loc[unknown_msisdn, '_reject_reason'] = 'msisdn_not_in_customers'
+
+    bad_ts = df['end_timestamp'] < df['start_timestamp']
+    df.loc[bad_ts & df['_reject_reason'].isna(), '_reject_reason'] = 'end_before_start_timestamp'
 
     rejected = df[df['_reject_reason'].notna()].copy()
     clean = df[df['_reject_reason'].isna()].drop(columns=['_reject_reason'])
