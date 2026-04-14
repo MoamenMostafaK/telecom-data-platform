@@ -1,41 +1,23 @@
 services:
-
-  python:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://admin:admin@db:5432/telecomDB
-    volumes:
-      - ../scripts:/app/scripts
-    working_dir: /app
-    command: python -m scripts.main
-
-  db:
+  postgres:
     image: postgres:alpine
+    container_name: telecom_db
     restart: always
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=telecomDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=telecom
     ports:
-      - "5498:5432"
+      - "5498:5432" # 5498 is your "door" from Windows to Docker
     volumes:
-      - db_data:/var/lib/postgresql/data
-
+      - telecom_pgdata:/var/lib/postgresql/data
+      - ./sql/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
 
   admin-panel:
     image: adminer:latest
     restart: always
     ports:
       - "8081:8080"
-    depends_on:
-      - db
-
 
 volumes:
-  db_data:
-
-
+  telecom_pgdata:

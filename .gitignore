@@ -10,15 +10,14 @@ env/
 .env
 
 # Project specific data/logs
-logs/*.txt
+logs/
 
 
 # Raw generated data
 data/raw/*.csv
-bronze/
-
-silver/
-gold/
+data/quarantine/
+etl/data/quarantine/
+generate/data/raw/
 
 # OS specific
 .DS_Store
